@@ -1,0 +1,52 @@
+.team {
+    display: flex;
+    flex-wrap: wrap; /* allow cards to go to next row */
+    gap: 6rem; /* space between cards */
+    justify-content: center;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: row; /* image next to text */
+    align-items: flex-start;
+    gap: 2rem;
+    width: 600px; /* card width */
+    flex-shrink: 0;
+    background: none; /* optional: card background */
+    padding: 0.5rem;
+    box-sizing: border-box; /* include padding in width */
+    overflow: hidden; /* prevent overlap */
+}
+
+.photo-wrapper {
+    position: relative; /* for logo overlay */
+    flex-shrink: 0; /* image doesn’t shrink */
+}
+
+    .photo-wrapper img {
+        display: block;
+        width: 250px; /* headshot size */
+        height: auto;
+        border-radius: 8px;
+    }
+
+.logo-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 125px !important; /* adjust: 10–20px usually works */
+    height: auto;
+    transform: translate(45%, 10%); /* centers logo on corner */
+}
+
+.member-info {
+    flex: 1; /* takes remaining space next to image */
+}
+
+.member-info h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.member-info p {
+    margin: 0;
+}

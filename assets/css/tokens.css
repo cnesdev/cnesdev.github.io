@@ -1,0 +1,43 @@
+@font-face {
+    font-family: BBHHegarty;
+    src: url('../fonts/BBH_Hegarty/BBHHegarty-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: BreeSerif;
+  src: url('../fonts/Bree_Serif/BreeSerif-Regular.woff2') format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+    /*Brand colors*/
+    --cnes-darkred: #570300;
+    --cnes-red: #88243B;
+    --cnes-yellow: #dda900;
+    --cnes-white: #EFEFEF;
+    --cnes-light: #B7B7B7;
+    --cnes-dark: #2A2829;
+
+    /*Typography*/
+    --font-display: "BBHHegarty", system-ui, sans-serif;
+    --font-serif: "BreeSerif", Georgia, system-ui, serif;
+    --font-mono: ui-monospace, SFMono-Regular, monospace;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+
+    /* Spacing scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 2rem;
+
+    /* Layout */
+    --max-width: 72rem;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+}

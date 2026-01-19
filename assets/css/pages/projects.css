@@ -1,0 +1,81 @@
+.projects {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+.project-card {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	background: none;
+	padding: 1.5rem;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+	.project-card.reverse {
+		flex-direction: row-reverse;
+	}
+
+	.project-card img {
+		width: 250px;
+		height: auto;
+		border-radius: 8px;
+		flex-shrink: 0;
+	}
+
+.project-info {
+	flex: 1; /* text takes remaining space */
+}
+
+	.project-info h3 {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.5rem;
+	}
+
+	.project-info p {
+		margin: 0 0 1rem 0;
+		line-height: 1.4;
+	}
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+	.project-card,
+	.project-card.reverse {
+		flex-direction: column; /* stack image above text */
+		text-align: center;
+	}
+
+		.project-card img {
+			width: 100%;
+			max-width: 300px;
+		}
+}
+
+.bg-wrap-projects-page {
+	position: relative;
+	background: none;
+}
+
+	.bg-wrap-projects-page::before {
+		content: "";
+		position: fixed;
+		inset: 0;
+		background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* semi-transparent black overlay */
+		url("/assets/images/candu-bg.png") center / cover no-repeat;
+		z-index: -1;
+		background-position: 0% 0%;
+	}
+
+
+	/* bring content above overlay */
+	.bg-wrap-projects-page > * {
+		position: relative;
+		z-index: 1;
+	}
+

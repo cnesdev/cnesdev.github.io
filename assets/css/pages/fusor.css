@@ -1,0 +1,21 @@
+.bg-wrap-fusor {
+    position: relative;
+    background: none;
+}
+
+    .bg-wrap-fusor::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* semi-transparent black overlay */
+        url("/assets/images/projects/fusor-bg.png") center / cover no-repeat;
+        z-index: -1;
+        background-position: 0% 0%;
+    }
+
+
+    /* bring content above overlay */
+    .bg-wrap-cloud-chamber > * {
+        position: relative;
+        z-index: 1;
+    }

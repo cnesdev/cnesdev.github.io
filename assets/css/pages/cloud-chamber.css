@@ -1,0 +1,36 @@
+.bg-wrap-cloud-chamber {
+    position: relative;
+    background: none;
+}
+
+    .bg-wrap-cloud-chamber::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* semi-transparent black overlay */
+        url("/assets/images/projects/cloud-chamber-bg.png") center / cover no-repeat;
+        z-index: -1;
+        background-position: 0% 0%;
+    }
+
+
+    /* bring content above overlay */
+    .bg-wrap-cloud-chamber > * {
+        position: relative;
+        z-index: 1;
+    }
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+    /* Maintain 16:9 aspect ratio and make fully responsive */
+    .video-container iframe {
+        width: 100%;
+        max-width: 875px; /* keeps your intended max width */
+        aspect-ratio: 16/9; /* automatically sets height proportional to width */
+        border: none;
+    }

@@ -1,0 +1,21 @@
+.bg-wrap-reactor-simulator {
+    position: relative;
+    background: none;
+}
+
+    .bg-wrap-reactor-simulator::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* semi-transparent black overlay */
+        url("/assets/images/projects/reactor-simulator-bg.png") center / cover no-repeat;
+        z-index: -1;
+        background-position: 0% 0%;
+    }
+
+
+/* bring content above overlay */
+.bg-wrap-reactor-simulator > * {
+    position: relative;
+    z-index: 1;
+}

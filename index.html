@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        // Simple mobile detection
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (isMobile) {
+        window.location.replace("https://liemyip.wixsite.com/cnes/");
+        } else {
+        // window.location.replace("https://cnes.ca");
+        }
+    </script>
+    <title>CNES</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container stack">
+            <nav class="container" style="display:flex; align-items:center; justify-content:space-between; padding: var(--space-2) 0;">
+                <!-- Logo -->
+                <a href="/" class="logo" style="display:flex; align-items:center;">
+                    <img src="assets/images/logo.avif" alt="Club Logo" style="height: 50px;"> <!-- custom size -->
+                </a>
+
+                <!-- Nav links -->
+                <ul style="list-style:none; display:flex; gap: var(--space-4); margin:0; padding:0; align-items:center;">
+                    <li><a href="/" class="button">Home</a></li>
+                    <li><a href="/about.html" class="button">About</a></li>
+                    <!-- Projects dropdown -->
+                    <li class="dropdown " style="position:relative;">
+                        <a class="button" href="/projects.html" style="position:relative;">Projects</a>
+                        <ul class="dropdown-menu" style="position:absolute; top:100%; left:0; background: var(--club-white); padding: var(--space-2) 0; list-style:none; margin:0; min-width:200px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+                            <li><a href="/projects/cloud-chamber.html" class="button" style="width:100%; text-align:left; background:none;">Cloud Chamber</a></li>
+                            <li><a href="/projects/reactor-simulator.html" class="button" style="width:100%; text-align:left; background:none;">Reactor Simulator</a></li>
+                            <li><a href="/projects/fusor.html" class="button" style="width:100%; text-align:left; background:none;">Fusor</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/contact.html" class="button">Join</a></li>
+                </ul>
+            </nav>
+
+
+        </div>
+    </header>
+    <main class="page-content">
+        <section class="bg-wrap">
+            <!-- Hero section -->
+            <section class="hero">
+                <div class="hero-center">
+                    <img src="/assets/images/logo.avif" alt="Logo" class="logo">
+                    <h1 class="cnes-title">CONCORDIA NUCLEAR ENGINEERING SOCIETY</h1>
+                    <a href="/contact.html" class="btn btn-square">Join Now</a>
+                </div>
+            </section>
+        </section>
+
+        <!-- Content below hero -->
+        <section class="below">
+            <div class="text-box">
+                <p>CNES supports student learning through small-scale, safe projects related to the nuclear industry (check out our projects page!). In addition, we host lectures, academic events, and nuclear facility tours for our members. We're a new team with plenty of room for growth!</p>
+                <div class="nav-buttons">
+                    <a href="/about.html" class="btn btn-rounded">About</a>
+                    <a href="/projects.html" class="btn btn-rounded">Projects</a>
+                    <a href="/contact.html" class="btn btn-rounded">Contact</a>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <footer class="site-footer">
+
+        <p>© 2026 CNES. All rights reserved.</p>
+    </footer>
+</body>
+
+
+</html>
+<script>
+    const dropdown = document.querySelector('nav li[style*="position:relative"]');
+    const menu = dropdown.querySelector('ul');
+
+    dropdown.querySelector('button').addEventListener('click', () => {
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // copilot: click toggle for touch devices (prevents JS errors)
+if (toggle) {
+  toggle.addEventListener('click', (e) => {
+    // Prevent navigating away when clicked to toggle on touch
+    e.preventDefault();
+    const visible = menu.style.visibility === 'visible';
+    menu.style.visibility = visible ? 'hidden' : 'visible';
+    menu.style.opacity = visible ? '0' : '1';
+  });
+}
+
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) menu.style.display = 'none';
+    });
+</script>
