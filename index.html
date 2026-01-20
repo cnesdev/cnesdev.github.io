@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
+        /*
         // Simple mobile detection
         const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -13,6 +14,13 @@
         } else {
         // window.location.replace("https://cnes.ca");
         }
+        */
+        
+        //Faster JS redirect for mobile
+        if (window.innerWidth < 768) {
+            window.location.replace("https://liemyip.wixsite.com/cnes/");
+        }
+        
     </script>
     <title>CNES</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
@@ -107,4 +115,5 @@ if (toggle) {
     document.addEventListener('click', (e) => {
     if (!dropdown.contains(e.target)) menu.style.display = 'none';
     });
+
 </script>
