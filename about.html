@@ -1,231 +1,164 @@
 ﻿<!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>CNES</title>
-        <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-        <!-- Main CSS -->
-        <link rel="stylesheet" href="assets/css/main.css" />
-    </head>
-    <body>
-        <header class="site-header">
-            <div class="container header-container stack">
-                <nav class="container" style="display:flex; align-items:center; justify-content:space-between; padding: var(--space-2) 0;">
-                    <!-- Logo -->
-                    <a href="/" class="logo" style="display:flex; align-items:center;">
-                        <img src="assets/images/logo.avif" alt="Club Logo" style="height: 50px;"> <!-- custom size -->
-                    </a>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About - CNES</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
 
-                    <!-- Nav links -->
-                    <ul style="list-style:none; display:flex; gap: var(--space-4); margin:0; padding:0; align-items:center;">
-                        <li><a href="/" class="button">Home</a></li>
-                        <li><a href="/about.html" class="button">About</a></li>
-                        <!-- Projects dropdown -->
-                        <li class="dropdown " style="position:relative;">
-                            <a class="button" href="/projects.html" style="position:relative;">Projects</a>
-                            <ul class="dropdown-menu" style="position:absolute; top:100%; left:0; background: var(--club-white); padding: var(--space-2) 0; list-style:none; margin:0; min-width:200px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
-                                <li><a href="/projects/cloud-chamber.html" class="button" style="width:100%; text-align:left; background:none;">Cloud Chamber</a></li>
-                                <li><a href="/projects/reactor-simulator.html" class="button" style="width:100%; text-align:left; background:none;">Reactor Simulator</a></li>
-                                <li><a href="/projects/fusor.html" class="button" style="width:100%; text-align:left; background:none;">Fusor</a></li>
-                            </ul>
-                        </li>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <nav>
+                <a href="/" class="nav-logo">
+                    <img src="/assets/images/logo.avif" alt="CNES Logo">
+                </a>
 
-                        <li><a href="/contact.html" class="button">Join</a></li>
-                        
-                    </ul>
-                </nav>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="/" class="button">Home</a></li>
+                    <li><a href="/about.html" class="button">About</a></li>
+                    <li class="dropdown">
+                        <a class="button" href="/projects.html">Projects</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/projects/cloud-chamber.html" class="button">Cloud Chamber</a></li>
+                            <li><a href="/projects/reactor-simulator.html" class="button">Reactor Simulator</a></li>
+                            <li><a href="/projects/fusor.html" class="button">Fusor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/contact.html" class="button">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="bg-wrap">
+            <section class="hero">
+                <div class="hero-center">
+                    <h2 class="cnes-title">ABOUT US</h2>
+                    <div class="text-box-lg">
+                        <p>We are a student group passionate about nuclear energy's potential to create a more sustainable future, while not compromising on our energy needs</p>
+                    </div>
+                </div>
+            </section>
 
 
+        </section>
+        <section class="hero below">
+            <div class="hero-center">
+                <h2 class="cnes-title">OUR MISSION</h2>
+                <div class="text-box-lg">
+                    <p>The core mission of The Concordia Nuclear Engineering Society is to support a space where students can learn more about nuclear science and technology, empowering them to immerse themselves in this field via projects, activities, discussions, and events. CNES strives to foster a positive, inclusive, and open learning environment in which members, regardless of background or prior knowledge, can participate and make meaningful contributions.</p>
+                </div>
             </div>
-        </header>
-        <main class="page-content">
-            <section class="bg-wrap">
-                <!-- Hero section -->
-                <section class="hero">
-                    <div class="hero-center">
-                        <h2 class="cnes-title">ABOUT US</h2>
-                        <div class="text-box-lg">
-                            <p>We are a student group passionate about nuclear energy's potential to create a more sustainable future, while not compromising on our energy needs</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="hero">
-                    <div class="hero-center">
-                        <h2 class="cnes-title">OUR MISSION</h2>
-                        <div class="text-box-lg">
-                            <p>
-                                The core mission of The Concordia Nuclear Engineering Society is to support a space where students can learn more about nuclear science and technology, empowering them to immerse themselves in this field via projects, activities, discussions, and events. CNES strives to foster a positive, inclusive, and open learning environment in which members, regardless of background or prior knowledge, can participate and make meaningful contributions.
-                            </p>
-                        </div>
-                    </div>
-                    
-                </section>
-            </section>
-            
-            <section class="hero team">
-                <h2 class="hero-center cnes-title">OUR TEAM</h2>
-                <div class="team-member">
-                    <div class="photo-wrapper">
-                        <img src="/assets/images/about-page/nb.avif" alt="Person Name">
-                        <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
-                    </div>
-                    <div class="member-info">
-                        <h3>Nathaniel Becharde</h3>
-                        <p>
-                            2nd year Mechanical Engineering
-                        </p>
-                        <p>
-                            CO-PRESIDENT
-                        </p>
-                    </div>
+        </section>
+        <section class="hero team below">
+            <h2 class="hero-center cnes-title">OUR TEAM</h2>
+            <div class="team-member">
+                <div class="photo-wrapper">
+                    <img src="/assets/images/about-page/nb.avif" alt="Nathaniel Becharde">
+                    <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
                 </div>
-                <div class="team-member">
-                    <div class="photo-wrapper">
-                        <img src="/assets/images/about-page/rb.avif" alt="Person Name">
-                        <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
-                    </div>
-                    <div class="member-info">
-                        <h3>Ricardo Bautista</h3>
-                        <p>
-                            4th year Mechanical Engineering
-
-                        </p>
-                        <p>
-                            CO-PRESIDENT
-                        </p>
-                    </div>
+                <div class="member-info">
+                    <h3>Nathaniel Becharde</h3>
+                    <p>2nd year Mechanical Engineering</p>
+                    <p>CO-PRESIDENT</p>
                 </div>
-                <div class="team-member">
-                    <div class="photo-wrapper">
-                        <img src="/assets/images/about-page/Jon.jpg" alt="Person Name">
-                        <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
-                    </div>
-                    <div class="member-info">
-                        <h3>Jonathan Sztainberg</h3>
-                        <p>
-                            3rd year Mechanical Engineering
-                        </p>
-                        <p>
-                            VP INTERNAL
-                        </p>
-                    </div>
+            </div>
+            <div class="team-member">
+                <div class="photo-wrapper">
+                    <img src="/assets/images/about-page/rb.avif" alt="Ricardo Bautista">
+                    <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
                 </div>
-                <div class="team-member">
-                    <div class="photo-wrapper">
-                        <img src="/assets/images/about-page/mn.avif" alt="Person Name">
-                        <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
-                    </div>
-                    <div class="member-info">
-                        <h3>Mufaro Nazare</h3>
-                        <p>
-                            1st year Mechanical Engineering
-                        </p>
-                        <p>
-                            VP EXTERNAL
-                        </p>
-                    </div>
+                <div class="member-info">
+                    <h3>Ricardo Bautista</h3>
+                    <p>4th year Mechanical Engineering</p>
+                    <p>CO-PRESIDENT</p>
                 </div>
-                <div class="team-member">
-                    <div class="photo-wrapper">
-                        <img src="/assets/images/about-page/carlos.avif" alt="Person Name">
-                        <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
-                    </div>
-                    <div class="member-info">
-                        <h3>Carlos Eduaro Prado de Silva</h3>
-                        <p>
-                            3rd year Mechanical Engineering
-                        </p>
-                        <p>
-                            VP FINANCE
-                        </p>
-                    </div>
+            </div>
+            <div class="team-member">
+                <div class="photo-wrapper">
+                    <img src="/assets/images/about-page/Jon.jpg" alt="Jonathan Sztainberg">
+                    <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
                 </div>
-                <div class="team-member">
-                    <div class="photo-wrapper">
-                        <img src="/assets/images/about-page/pedro.avif" alt="Person Name">
-                        <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
-                    </div>
-                    <div class="member-info">
-                        <h3>Pedro Corzo Parra</h3>
-                        <p>
-                            2nd year Electrical Engineering
-                        </p>
-                        <p>
-                            VP ACADEMIC
-                        </p>
-                    </div>
+                <div class="member-info">
+                    <h3>Jonathan Sztainberg</h3>
+                    <p>3rd year Mechanical Engineering</p>
+                    <p>VP INTERNAL</p>
                 </div>
-                <div class="team-member">
-                    <div class="photo-wrapper">
-                        <img src="/assets/images/about-page/liem.avif" alt="Person Name">
-                        <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
-                    </div>
-                    <div class="member-info">
-                        <h3>Liem Yip</h3>
-                        <p>
-                            2nd year Mechanical Engineering
-                        </p>
-                        <p>
-                            VP Marketing
-                        </p>
-                    </div>
+            </div>
+            <div class="team-member">
+                <div class="photo-wrapper">
+                    <img src="/assets/images/about-page/mn.avif" alt="Mufaro Nazare">
+                    <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
                 </div>
-                <div class="team-member">
-                    <div class="photo-wrapper">
-                        <img src="/assets/images/about-page/chris.avif" alt="Person Name">
-                        <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
-                    </div>
-                    <div class="member-info">
-                        <h3>Chris Fardeau</h3>
-                        <p>
-                            2nd year Electrical Engineering
-                        </p>
-                        <p>
-                            VP EVENTS
-                        </p>
-                    </div>
+                <div class="member-info">
+                    <h3>Mufaro Nazare</h3>
+                    <p>1st year Mechanical Engineering</p>
+                    <p>VP EXTERNAL</p>
                 </div>
-                <!-- repeat for other members -->
-            </section>
+            </div>
+            <div class="team-member">
+                <div class="photo-wrapper">
+                    <img src="/assets/images/about-page/carlos.avif" alt="Carlos Eduaro Prado de Silva">
+                    <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
+                </div>
+                <div class="member-info">
+                    <h3>Carlos Eduaro Prado de Silva</h3>
+                    <p>3rd year Mechanical Engineering</p>
+                    <p>VP FINANCE</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="photo-wrapper">
+                    <img src="/assets/images/about-page/pedro.avif" alt="Pedro Corzo Parra">
+                    <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
+                </div>
+                <div class="member-info">
+                    <h3>Pedro Corzo Parra</h3>
+                    <p>2nd year Electrical Engineering</p>
+                    <p>VP ACADEMIC</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="photo-wrapper">
+                    <img src="/assets/images/about-page/liem.avif" alt="Liem Yip">
+                    <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
+                </div>
+                <div class="member-info">
+                    <h3>Liem Yip</h3>
+                    <p>2nd year Mechanical Engineering</p>
+                    <p>VP Marketing</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="photo-wrapper">
+                    <img src="/assets/images/about-page/chris.avif" alt="Chris Fardeau">
+                    <img src="/assets/images/about-page/red_asset.avif" class="logo-overlay">
+                </div>
+                <div class="member-info">
+                    <h3>Chris Fardeau</h3>
+                    <p>2nd year Electrical Engineering</p>
+                    <p>VP EVENTS</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer class="site-footer">
+        <p>© 2026 CNES. All rights reserved.</p>
+    </footer>
 
-        </main>
-        <footer class="site-footer">
-
-            <p>© 2026 CNES. All rights reserved.</p>
-        </footer>
-
-
-    </body>
-
+    <script src="/assets/js/navigation.js"></script>
+</body>
 
 </html>
-<script>
-    const dropdown = document.querySelector('nav li[style*="position:relative"]');
-    const menu = dropdown.querySelector('ul');
-
-    dropdown.querySelector('button').addEventListener('click', () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // copilot: click toggle for touch devices (prevents JS errors)
-    if (toggle) {
-    toggle.addEventListener('click', (e) => {
-    // Prevent navigating away when clicked to toggle on touch
-    e.preventDefault();
-    const visible = menu.style.visibility === 'visible';
-    menu.style.visibility = visible ? 'hidden' : 'visible';
-    menu.style.opacity = visible ? '0' : '1';
-    });
-    }
-
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-    if (!dropdown.contains(e.target)) menu.style.display = 'none';
-    });
-
-</script>

@@ -4,91 +4,72 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CNES</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="../assets/css/main.css" />
+    <title>Fusor - CNES</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
+
 <body>
     <header class="site-header">
-        <div class="container header-container stack">
-            <nav class="container" style="display:flex; align-items:center; justify-content:space-between; padding: var(--space-2) 0;">
-                <!-- Logo -->
-                <a href="/" class="logo" style="display:flex; align-items:center;">
-                    <img src="../assets/images/logo.avif" alt="Club Logo" style="height: 50px;"> <!-- custom size -->
+        <div class="header-container">
+            <nav>
+                <a href="/" class="nav-logo">
+                    <img src="/assets/images/logo.avif" alt="CNES Logo">
                 </a>
 
-                <!-- Nav links -->
-                <ul style="list-style:none; display:flex; gap: var(--space-4); margin:0; padding:0; align-items:center;">
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links">
                     <li><a href="/" class="button">Home</a></li>
                     <li><a href="/about.html" class="button">About</a></li>
-                    <!-- Projects dropdown -->
-                    <li class="dropdown " style="position:relative;">
-                        <a class="button" href="/projects.html" style="position:relative;">Projects</a>
-                        <ul class="dropdown-menu" style="position:absolute; top:100%; left:0; background: var(--club-white); padding: var(--space-2) 0; list-style:none; margin:0; min-width:200px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
-                            <li><a href="/projects/cloud-chamber.html" class="button" style="width:100%; text-align:left; background:none;">Cloud Chamber</a></li>
-                            <li><a href="/projects/reactor-simulator.html" class="button" style="width:100%; text-align:left; background:none;">Reactor Simulator</a></li>
-                            <li><a href="/projects/fusor.html" class="button" style="width:100%; text-align:left; background:none;">Fusor</a></li>
+                    <li class="dropdown">
+                        <a class="button" href="/projects.html">Projects</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/projects/cloud-chamber.html" class="button">Cloud Chamber</a></li>
+                            <li><a href="/projects/reactor-simulator.html" class="button">Reactor Simulator</a></li>
+                            <li><a href="/projects/fusor.html" class="button">Fusor</a></li>
                         </ul>
                     </li>
-
                     <li><a href="/contact.html" class="button">Join</a></li>
                 </ul>
             </nav>
-
-
         </div>
     </header>
+
     <main class="page-content">
         <section class="bg-wrap-fusor">
-            <!-- Hero section -->
             <section class="hero">
                 <div class="hero-center">
                     <h2 class="cnes-title">FUSOR</h2>
-                    <h3>Coming soon...</h3>
-
+                    <h3>What is a Farnsworth Fusor?</h3>
+                    <div class="text-box-lg">
+                        <p>A fusor is a small device capable of fusing small amounts of deuterium ions. It does so by heating up these ions using an electric field inside a vacuum. As the ions are accelerated towards the center, the chances of two ions colliding and producing fusion increases.</p>
+                    </div>
                 </div>
             </section>
 
+            <section class="hero">
+                <img src="/assets/images/projects/fusor-image.avif" alt="IEC Fusion">
 
-
+                <div class="hero-center">
+                    <div class="text-box-lg">
+                        <p>A picture of IEC fusion of deuterium ions. Taken from: https://en.wikipedia.org/wiki/Fusor</p>
+                        <p>CNES is planning to build one starting next semester! If you are interested please join our discord and mention that you want to join.</p>
+                    </div>
+                </div>
+            </section>
         </section>
-
-
-
     </main>
-    <footer class="site-footer">
 
+    <footer class="site-footer">
         <p>© 2026 CNES. All rights reserved.</p>
     </footer>
 
-
+    <script src="/assets/js/navigation.js"></script>
 </body>
 
-
 </html>
-<script>
-    const dropdown = document.querySelector('nav li[style*="position:relative"]');
-    const menu = dropdown.querySelector('ul');
-
-    dropdown.querySelector('button').addEventListener('click', () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // copilot: click toggle for touch devices (prevents JS errors)
-    if (toggle) {
-    toggle.addEventListener('click', (e) => {
-    // Prevent navigating away when clicked to toggle on touch
-    e.preventDefault();
-    const visible = menu.style.visibility === 'visible';
-    menu.style.visibility = visible ? 'hidden' : 'visible';
-    menu.style.opacity = visible ? '0' : '1';
-    });
-    }
-
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-    if (!dropdown.contains(e.target)) menu.style.display = 'none';
-    });
-</script>
