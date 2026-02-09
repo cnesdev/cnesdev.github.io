@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 - Page Not Found | CNES</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <style>
+        .error-404 {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-404::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(221, 169, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(136, 36, 59, 0.1) 0%, transparent 50%),
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url("/assets/images/reactor-bg.jpg") center / cover no-repeat;
+            z-index: -1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .error-container {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-code {
+            font-family: var(--font-display);
+            font-size: clamp(8rem, 20vw, 16rem);
+            font-weight: 900;
+            color: var(--cnes-yellow);
+            margin: 0;
+            line-height: 0.9;
+            text-shadow: 
+                0 0 20px rgba(221, 169, 0, 0.5),
+                0 0 40px rgba(221, 169, 0, 0.3),
+                0 0 60px rgba(221, 169, 0, 0.2);
+            animation: flicker 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            10% { opacity: 0.95; }
+            20% { opacity: 1; }
+            30% { opacity: 0.9; }
+            40% { opacity: 1; }
+        }
+
+        /* Radiation symbol */
+        .radiation-symbol {
+            width: 150px;
+            height: 150px;
+            margin: 2rem auto;
+            position: relative;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .radiation-symbol::before {
+            content: "☢";
+            font-size: 150px;
+            color: var(--cnes-yellow);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.3;
+            text-shadow: 0 0 30px rgba(221, 169, 0, 0.5);
+        }
+
+        .error-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--cnes-white);
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .error-message {
+            font-family: var(--font-serif);
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--cnes-light);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .error-message strong {
+            color: var(--cnes-yellow);
+        }
+
+        .error-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .error-buttons .btn-square {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                box-shadow: 0 0 5px var(--cnes-white);
+            }
+            50% { 
+                box-shadow: 0 0 20px var(--cnes-yellow), 0 0 30px rgba(221, 169, 0, 0.3);
+            }
+        }
+
+        /* Particle effects */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--cnes-yellow);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particle-fall 5s linear infinite;
+        }
+
+        @keyframes particle-fall {
+            0% {
+                opacity: 0;
+                transform: translateY(0) translateX(0);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(var(--drift));
+            }
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; --drift: 20px; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; --drift: -15px; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; --drift: 25px; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 0.5s; --drift: -20px; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 1.5s; --drift: 10px; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 2.5s; --drift: -25px; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 0.8s; --drift: 15px; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 1.8s; --drift: -10px; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 2.2s; --drift: 30px; }
+
+        @media (max-width: 768px) {
+            .error-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .radiation-symbol {
+                width: 100px;
+                height: 100px;
+            }
+
+            .radiation-symbol::before {
+                font-size: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <nav>
+                <a href="/" class="nav-logo">
+                    <img src="/assets/images/logo.avif" alt="CNES Logo">
+                </a>
+
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="/" class="button">Home</a></li>
+                    <li><a href="/about.html" class="button">About</a></li>
+                    <li class="dropdown">
+                        <a class="button" href="/projects.html">Projects</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/projects/cloud-chamber.html" class="button">Cloud Chamber</a></li>
+                            <li><a href="/projects/reactor-simulator.html" class="button">Reactor Simulator</a></li>
+                            <li><a href="/projects/fusor.html" class="button">Fusor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/contact.html" class="button">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content error-404">
+        <!-- Particle effects -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            
+            <div class="radiation-symbol"></div>
+            
+            <h2 class="error-title">Not Found</h2>
+            
+            <p class="error-message">
+                The page you're looking for has undergone <strong>nuclear decay</strong> and is no longer stable at this location. 
+                </p>
+
+            <div class="error-buttons">
+                <a href="/" class="btn-square">Return to Reactor Core</a>
+                <a href="/projects.html" class="btn-square">Browse Projects</a>
+                <a href="/contact.html" class="btn-square">Report Issue</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 CNES. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/js/navigation.js"></script>
+</body>
+
+</html>
