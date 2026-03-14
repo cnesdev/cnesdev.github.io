@@ -1,11 +1,9 @@
-.text-center {
-  text-align: center;
-}
+/* ===================================
+   UTILITIES — Single-purpose helpers.
+   These should never be overridden;
+   they always win via specificity.
+   =================================== */
 
-.mt-4 {
-  margin-top: var(--space-4);
-}
-
-.hidden {
-  display: none;
-}
+.text-center { text-align: center; }
+.mt-4        { margin-top: var(--space-4); }
+.hidden      { display: none; }

@@ -1,3 +1,10 @@
+/* ===================================
+   COMPONENTS — Reusable UI pieces.
+   Buttons, social links, media embeds.
+   =================================== */
+
+/* --- Base button --- */
+
 .button {
     padding: var(--space-2) var(--space-3);
     color: var(--cnes-white);
@@ -6,15 +13,15 @@
 }
 
 .button:hover {
-  color: var(--cnes-yellow);
+    color: var(--cnes-yellow);
 }
 
 a.button {
     text-decoration: none;
-    
 }
 
-/* Square border button */
+/* --- Square border button --- */
+
 .btn-square {
     border: 4px solid var(--cnes-white);
     padding: 0.75rem 1.5rem;
@@ -24,23 +31,27 @@ a.button {
     font-family: var(--font-serif);
 }
 
-/* Rounded border button */
+/* --- Rounded border button --- */
+
 .btn-rounded {
     border: 4px solid var(--cnes-white);
     border-radius: 20px;
-    padding: 0.75rem 2.5rem; /* wider horizontal padding */
+    padding: 0.75rem 2.5rem;
     text-decoration: none;
     display: inline-block;
     color: var(--cnes-white);
     font-family: var(--font-serif);
-    min-width: 200px; /* optional: forces button to a minimum width */
-    text-align: center; /* keeps text centered */
+    min-width: 200px;
+    text-align: center;
 }
 
-    .btn-square:hover, .btn-rounded:hover {
-        color: var(--cnes-yellow);
-        border-color: var(--cnes-yellow);
-    }
+.btn-square:hover,
+.btn-rounded:hover {
+    color: var(--cnes-yellow);
+    border-color: var(--cnes-yellow);
+}
+
+/* --- Social icon buttons --- */
 
 .social-buttons {
     margin-top: 2rem;
@@ -50,17 +61,34 @@ a.button {
     margin-bottom: 8rem;
 }
 
-    .social-buttons a {
-        width: 56px;
-        height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.15s ease, background-color 0.15s ease;
-    }
+.social-buttons a {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
 
-        .social-buttons a:hover {
-            transform: scale(1.05);
-        }
+.social-buttons a:hover {
+    transform: scale(1.05);
+}
 
+/* --- Video embed (responsive 16:9) ---
+   Moved here from cloud-chamber.css because
+   any page embedding video can reuse this.
+   =================================== */
 
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 875px;
+    aspect-ratio: 16 / 9;
+    border: none;
+}

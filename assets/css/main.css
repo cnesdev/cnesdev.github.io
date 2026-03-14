@@ -1,11 +1,25 @@
+/* ===================================
+   MAIN — Import order matters.
+   Each layer builds on the previous.
+
+   tokens    → raw values (colors, fonts, spacing)
+   base      → element defaults (html, body, headings)
+   layout    → page structure + shared page-bg pattern
+   nav       → site header, hamburger, dropdowns
+   components→ reusable UI (buttons, embeds, social)
+   utilities → single-purpose overrides
+   pages/*   → per-page modifiers (bg image, unique layouts)
+   =================================== */
+
 @import "tokens.css";
 @import "base.css";
 @import "layout.css";
+@import "nav.css";
 @import "components.css";
 @import "utilities.css";
+
 @import "pages/about.css";
 @import "pages/projects.css";
 @import "pages/cloud-chamber.css";
 @import "pages/fusor.css";
 @import "pages/reactor-simulator.css";
-

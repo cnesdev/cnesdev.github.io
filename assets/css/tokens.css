@@ -7,15 +7,15 @@
 }
 
 @font-face {
-  font-family: BreeSerif;
-  src: url('../fonts/Bree_Serif/BreeSerif-Regular.woff2') format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: BreeSerif;
+    src: url('../fonts/Bree_Serif/BreeSerif-Regular.woff2') format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 :root {
-    /*Brand colors*/
+    /* Brand colors */
     --cnes-darkred: #570300;
     --cnes-red: #88243B;
     --cnes-yellow: #dda900;
@@ -23,7 +23,7 @@
     --cnes-light: #B7B7B7;
     --cnes-dark: #2A2829;
 
-    /*Typography*/
+    /* Typography */
     --font-display: "BBHHegarty", system-ui, sans-serif;
     --font-serif: "BreeSerif", Georgia, system-ui, serif;
     --font-mono: ui-monospace, SFMono-Regular, monospace;

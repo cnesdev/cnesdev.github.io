@@ -1,25 +1,18 @@
+/* ===================================
+   BASE — Reset, body defaults, global
+   type scale. No layout, no components.
+   =================================== */
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
-}
-
-.page-content {
-    flex: 1;
-}
-
-.site-footer {
-    background: var(--cnes-dark);
-    color: var(--cnes-white);
-    font-family: sans-serif;
-    text-align: left;
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 body {
@@ -32,27 +25,30 @@ body {
     background-color: var(--cnes-dark);
 }
 
-h3 {
+/* --- Type scale --- */
+
+h1 {
     font-family: var(--font-display);
-    color: var(--cnes-white);
     font-weight: normal;
+    color: var(--cnes-white);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.1;
+    margin: 0;
 }
 
 h2 {
     font-family: var(--font-display);
     font-weight: normal;
     color: var(--cnes-white);
-    font-size: clamp(4rem, 10vw, 3rem);
+    font-size: clamp(2rem, 6vw, 3.5rem);
     line-height: 1.1;
+    margin: 0;
 }
 
-
-h1 {
+h3 {
     font-family: var(--font-display);
-    font-weight: normal;
     color: var(--cnes-white);
-    font-size: clamp(4rem, 10vw, 4rem);
-    line-height: 1.1;
+    font-weight: normal;
 }
 
 p {

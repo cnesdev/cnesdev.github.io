@@ -1,9 +1,14 @@
-/* MOBILE FIRST: single column */
+/* ===================================
+   PAGE: About
+   Team grid and member card layout.
+   =================================== */
+
+/* --- About hero: single col mobile, two col desktop --- */
+
 .hero.team {
     display: block;
 }
 
-/* DESKTOP: two columns */
 @media (min-width: 768px) {
     .hero.team {
         display: grid;
@@ -13,60 +18,62 @@
         align-items: start;
     }
 
-        /* Make the title span both columns */
-        .hero.team > h2 {
-            grid-column: 1 / -1;
-        }
+    /* Title spans both columns */
+    .hero.team > h2 {
+        grid-column: 1 / -1;
+    }
 }
 
-.hero-center {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+/* --- Team card grid --- */
 
 .team {
     display: flex;
-    flex-wrap: wrap; /* allow cards to go to next row */
-    gap: 6rem; /* space between cards */
+    flex-wrap: wrap;
+    gap: 6rem;
     justify-content: center;
 }
 
+/* --- Individual member card --- */
+
 .team-member {
     display: flex;
-    flex-direction: row; /* image next to text */
+    flex-direction: row;
     align-items: flex-start;
     gap: 2rem;
-    width: 600px; /* card width */
+    width: 600px;
     flex-shrink: 0;
-    background: none; /* optional: card background */
     padding: 0.5rem;
-    box-sizing: border-box; /* include padding in width */
-    overflow: hidden; /* prevent overlap */
+    box-sizing: border-box;
+    overflow: hidden;
 }
+
+/* --- Headshot with logo corner overlay --- */
 
 .photo-wrapper {
-    position: relative; /* for logo overlay */
-    flex-shrink: 0; /* image doesn’t shrink */
+    position: relative;
+    flex-shrink: 0;
 }
 
-    .photo-wrapper img {
-        display: block;
-        width: 250px; /* headshot size */
-        height: auto;
-        border-radius: 8px;
-    }
+.photo-wrapper img {
+    display: block;
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
 
 .logo-overlay {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 125px !important; /* adjust: 10–20px usually works */
+    width: 125px !important;
     height: auto;
-    transform: translate(45%, 10%); /* centers logo on corner */
+    transform: translate(45%, 10%);
 }
 
+/* --- Member text info --- */
+
 .member-info {
-    flex: 1; /* takes remaining space next to image */
+    flex: 1;
 }
 
 .member-info h3 {
