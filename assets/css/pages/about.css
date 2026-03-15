@@ -18,10 +18,10 @@
         align-items: start;
     }
 
-    /* Title spans both columns */
-    .hero.team > h2 {
-        grid-column: 1 / -1;
-    }
+        /* Title spans both columns */
+        .hero.team > h2 {
+            grid-column: 1 / -1;
+        }
 }
 
 /* --- Team card grid --- */
@@ -33,53 +33,70 @@
     justify-content: center;
 }
 
-/* --- Individual member card --- */
+/* --- Individual member card ---
+   max-width instead of fixed width so cards
+   shrink gracefully when zooming or on narrow screens.
+   =================================== */
 
 .team-member {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 2rem;
-    width: 600px;
-    flex-shrink: 0;
+    width: 100%;
+    max-width: 600px;
     padding: 0.5rem;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
-/* --- Headshot with logo corner overlay --- */
+/* --- Headshot ---
+   :not(.logo-overlay) targets only the headshot,
+   so .photo-wrapper img rules never apply to the overlay.
+   =================================== */
 
 .photo-wrapper {
-    position: relative;
     flex-shrink: 0;
 }
 
-.photo-wrapper img {
-    display: block;
-    width: 250px;
-    height: auto;
-    border-radius: 8px;
-}
+    .photo-wrapper img:not(.logo-overlay) {
+        display: block;
+        width: 250px;
+        height: auto;
+        border-radius: 8px;
+    }
 
+/* !important beats the inherited .photo-wrapper img rule */
 .logo-overlay {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 125px !important;
-    height: auto;
-    transform: translate(45%, 10%);
+    display: none !important;
 }
 
-/* --- Member text info --- */
+/* --- Member text info ---
+   min-width: 0 prevents text overflowing its flex cell.
+   =================================== */
 
 .member-info {
     flex: 1;
+    min-width: 0;
 }
 
-.member-info h3 {
-    margin: 0 0 0.5rem 0;
-}
+    .member-info h3 {
+        margin: 0 0 0.5rem 0;
+    }
 
-.member-info p {
-    margin: 0;
+    .member-info p {
+        margin: 0;
+    }
+
+/* --- Mobile: stack photo above text --- */
+
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .photo-wrapper img:not(.logo-overlay) {
+        width: 180px;
+    }
 }
