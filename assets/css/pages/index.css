@@ -1,0 +1,42 @@
+/* ===================================
+   PAGE: Index
+   Hero JOIN NOW button, scroll chevron,
+   and node-map navigation section.
+   =================================== */
+
+/* --- JOIN NOW button (pill shape) --- */
+
+.btn-join {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 2.5rem;
+    border: 3px solid var(--cnes-white);
+    border-radius: 30px;
+    color: var(--cnes-white);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+    .btn-join:hover {
+        color: var(--cnes-yellow);
+        border-color: var(--cnes-yellow);
+    }
+
+/* --- Node map (pure SVG) ---
+   The SVG scales responsively via max-width.
+   All hover/color logic lives inside the SVG <defs><style>.
+   To move a node: update its cx/cy in the HTML,
+   then update the matching line endpoint to the same value.
+   =================================== */
+
+.node-map {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}

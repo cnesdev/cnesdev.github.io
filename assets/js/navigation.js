@@ -1,66 +1,64 @@
-// ===================================
-// MOBILE NAVIGATION
-// ===================================
+/* ===================================
+   navigation.js
+   Handles hamburger menu and mobile
+   dropdown toggling.
+   =================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+(function () {
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const dropdowns = document.querySelectorAll('.dropdown');
-    
-    // Toggle mobile menu
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
+    const navLinks  = document.querySelector('.nav-links');
+
+    /* --- Hamburger: toggle mobile nav open/close --- */
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
-            
-            // Prevent body scroll when menu is open
-            if (navLinks.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
         });
     }
-    
-    // Mobile dropdown toggle
-    dropdowns.forEach(dropdown => {
-        const dropdownButton = dropdown.querySelector('.button');
-        
-        dropdownButton.addEventListener('click', (e) => {
-            // On mobile, prevent navigation and toggle dropdown
-            if (window.innerWidth <= 768) {
+
+    /* --- Dropdowns ---
+         On desktop, CSS :hover handles everything — no JS needed.
+         On mobile, we intercept the first tap on a dropdown trigger:
+           - First tap: open the submenu, do NOT follow the href
+           - Second tap on the same item: follow the href (navigate)
+         This gives users a chance to see the submenu on touch devices
+         where hover doesn't exist.
+    ----------------------------------------------------------------- */
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(function (dropdown) {
+        const trigger = dropdown.querySelector(':scope > .button');
+
+        if (!trigger) return;
+
+        trigger.addEventListener('click', function (e) {
+            /* Only intercept on touch/mobile — desktop uses CSS hover */
+            if (window.innerWidth > 768) return;
+
+            const isOpen = dropdown.classList.contains('active');
+
+            /* Close all other open dropdowns first */
+            dropdowns.forEach(function (d) {
+                if (d !== dropdown) d.classList.remove('active');
+            });
+
+            if (!isOpen) {
+                /* First tap: open submenu, stay on page */
                 e.preventDefault();
-                dropdown.classList.toggle('active');
-                
-                // Close other dropdowns
-                dropdowns.forEach(other => {
-                    if (other !== dropdown) {
-                        other.classList.remove('active');
-                    }
-                });
+                dropdown.classList.add('active');
+            } else {
+                /* Second tap: submenu already open, allow navigation */
+                dropdown.classList.remove('active');
             }
         });
     });
-    
-    // Close mobile menu when clicking a link (except dropdown toggle)
-    const menuLinks = navLinks.querySelectorAll('a:not(.dropdown > .button)');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-    
-    // Close menu on window resize to desktop
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
-            dropdowns.forEach(d => d.classList.remove('active'));
+
+    /* Close nav and dropdowns if user taps outside */
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('nav')) {
+            navLinks && navLinks.classList.remove('active');
+            hamburger && hamburger.classList.remove('active');
+            dropdowns.forEach(function (d) { d.classList.remove('active'); });
         }
     });
-});
+})();

@@ -51,6 +51,31 @@ a.button {
     border-color: var(--cnes-yellow);
 }
 
+/* --- Scroll-down anchor button ---
+   Reusable on any page. Add an id to the target
+   section, then point href at it.
+
+   HTML usage:
+     <a href="#section-id" class="scroll-down" aria-label="Scroll to content">&#8964;</a>
+   =================================== */
+
+.scroll-down {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--cnes-white);
+    text-align: center;
+    text-decoration: none;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.scroll-down:hover {
+    color: var(--cnes-yellow);
+    transform: translateY(4px);
+}
+
 /* --- Social icon buttons --- */
 
 .social-buttons {

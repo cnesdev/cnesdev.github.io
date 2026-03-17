@@ -18,7 +18,9 @@
 @import "components.css";
 @import "utilities.css";
 
+@import "pages/index.css";
 @import "pages/about.css";
+@import "pages/events.css";
 @import "pages/projects.css";
 @import "pages/cloud-chamber.css";
 @import "pages/fusor.css";

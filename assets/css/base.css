@@ -9,6 +9,13 @@
     box-sizing: border-box;
 }
 
+/* Snap text rendering to whole pixels at all zoom levels */
+h1, h2, h3, h4, p, a, li, span {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
 html,
 body {
     height: 100%;
@@ -31,6 +38,7 @@ h1 {
     font-family: var(--font-display);
     font-weight: normal;
     color: var(--cnes-white);
+    /* FIX: clamp(min, fluid, max) — min must be < max */
     font-size: clamp(2.5rem, 8vw, 4rem);
     line-height: 1.1;
     margin: 0;

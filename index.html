@@ -6,35 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CNES - Concordia Nuclear Engineering Society</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <!-- Main CSS -->
     <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 
 <body>
-    <!-- ============================================
-         HEADER - Unified across all pages
-         ============================================ -->
     <header class="site-header">
         <div class="header-container">
             <nav>
-                <!-- Logo -->
                 <a href="/" class="nav-logo">
                     <img src="/assets/images/CNES logo (clear).avif" alt="CNES Logo">
                 </a>
-
-                <!-- Hamburger Menu (Mobile) -->
                 <button class="hamburger" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-
-                <!-- Navigation Links -->
                 <ul class="nav-links">
                     <li><a href="/" class="button">Home</a></li>
                     <li><a href="/about.html" class="button">About</a></li>
-
-                    <!-- Projects Dropdown -->
                     <li class="dropdown">
                         <a class="button" href="/projects.html">Projects</a>
                         <ul class="dropdown-menu">
@@ -43,49 +32,131 @@
                             <li><a href="/projects/fusor.html" class="button">Fusor</a></li>
                         </ul>
                     </li>
-
+                    <li><a href="/events.html" class="button">Events</a></li>
                     <li><a href="/contact.html" class="button">Join</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- ============================================
-         MAIN CONTENT - Customize per page
-         ============================================ -->
     <main class="page-content">
+        <!-- Hero with background image -->
         <section class="page-bg">
-            <!-- Hero section -->
             <section class="hero">
                 <div class="hero-center">
                     <img src="/assets/images/CNES logo (simple).avif" alt="Logo" class="logo">
-                    <h1 class="cnes-title">CONCORDIA NUCLEAR <br> ENGINEERING SOCIETY</h1>
-                    <a href="/contact.html" class="btn btn-square">Join Now</a>
+                    <h1 class="cnes-title">CONCORDIA NUCLEAR<br>ENGINEERING SOCIETY</h1>
+                    <a href="/contact.html" class="btn-join">JOIN NOW</a>
                 </div>
             </section>
         </section>
 
-        <!-- Content below hero -->
-        <section class="below">
-            <div class="text-box">
-                <p>CNES supports student learning through small-scale, safe projects related to the nuclear industry (check out our projects page!). In addition, we host lectures, academic events, and nuclear facility tours for our members. We're a new team with plenty of room for growth!</p>
-                <div class="nav-buttons">
-                    <a href="/about.html" class="btn btn-rounded">About</a>
-                    <a href="/projects.html" class="btn btn-rounded">Projects</a>
-                    <a href="/contact.html" class="btn btn-rounded">Contact</a>
-                </div>
+        <!-- Below hero: description + node map -->
+        <section id="learn-more" class="below">
+           
+
+            <div class="text-box-lg" style="max-width: 560px; margin: 2rem auto 4rem;">
+                <p>The Concordia Nuclear Engineering Society supports student learning through small-scale, safe projects related to the nuclear industry and nuclear science. We host lectures, academic events, and nuclear facility tours for our members. Learn more about our mission and team, projects, and how to join us below.</p>
             </div>
+
+            <!-- Node map navigation — pure SVG.
+                 To move a node: change its cx/cy.
+                 Then update the matching line endpoint to the same cx/cy.
+                 All coordinates are in the viewBox (0 0 700 420) space.
+
+                 Node centers:
+                   ABOUT US  cx=175  cy=210  r=65
+                   CONTACT   cx=525  cy=210  r=65
+                   PROJECTS  cx=385  cy=100  r=65
+                   EVENTS    cx=385  cy=320  r=65
+
+                 Lines branch from ABOUT US center (175, 210):
+                   0°  right  → CONTACT
+                   45° up     → PROJECTS
+                  -45° down   → EVENTS
+                 Horizontal extends left to x=30 and right past CONTACT to x=670
+            -->
+            <svg class="node-map" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+                 role="navigation" aria-label="Site navigation">
+
+                <defs>
+                    <style>
+                        .node-circle {
+                            fill: #dda900;
+                            transition: fill 0.2s;
+                        }
+
+                        .node-link:hover .node-circle {
+                            fill: #efefef;
+                        }
+
+                        .node-label {
+                            fill: #2a2829;
+                            font-family: "BBHHegarty", system-ui, sans-serif;
+                            font-size: 18px;
+                            font-weight: bold;
+                            letter-spacing: 1.5px;
+                            text-anchor: middle;
+                            dominant-baseline: middle;
+                            pointer-events: none;
+                            transition: fill 0.2s;
+                        }
+
+                        .node-link {
+                            cursor: pointer;
+                        }
+
+                        .svg-line {
+                            stroke: #dda900;
+                            stroke-width: 8;
+                        }
+                    </style>
+                </defs>
+
+                <!-- Lines (drawn first, sit behind nodes) -->
+                <!-- Horizontal: left tail → ABOUT US → CONTACT → right tail -->
+                <line class="svg-line" x1="30" y1="210" x2="175" y2="210" />
+                <line class="svg-line" x1="175" y1="210" x2="525" y2="210" />
+                <line class="svg-line" x1="525" y1="210" x2="670" y2="210" />
+                <!-- 45° up: ABOUT US center → PROJECTS center -->
+                <line class="svg-line" x1="175" y1="210" x2="385" y2="100" />
+                <!-- -45° down: ABOUT US center → EVENTS center -->
+                <line class="svg-line" x1="175" y1="210" x2="385" y2="320" />
+                <!-- Decorative dot at right tail end -->
+                <circle cx="670" cy="210" r="16" fill="#dda900" />
+
+                <!-- ABOUT US -->
+                <a class="node-link" href="/about.html">
+                    <circle class="node-circle" cx="175" cy="210" r="65" />
+                    <text class="node-label" x="175" y="210">ABOUT US</text>
+                </a>
+
+                <!-- CONTACT -->
+                <a class="node-link" href="/contact.html">
+                    <circle class="node-circle" cx="525" cy="210" r="65" />
+                    <text class="node-label" x="525" y="210">CONTACT</text>
+                </a>
+
+                <!-- PROJECTS -->
+                <a class="node-link" href="/projects.html">
+                    <circle class="node-circle" cx="385" cy="100" r="65" />
+                    <text class="node-label" x="385" y="100">PROJECTS</text>
+                </a>
+
+                <!-- EVENTS -->
+                <a class="node-link" href="/events.html">
+                    <circle class="node-circle" cx="385" cy="320" r="65" />
+                    <text class="node-label" x="385" y="320">EVENTS</text>
+                </a>
+
+            </svg>
         </section>
     </main>
 
-    <!-- ============================================
-         FOOTER - Unified across all pages
-         ============================================ -->
     <footer class="site-footer">
         <p>© 2026 CNES. All rights reserved.</p>
     </footer>
 
-    <!-- Navigation JavaScript -->
     <script src="/assets/js/navigation.js"></script>
 </body>
 

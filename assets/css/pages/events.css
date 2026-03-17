@@ -1,0 +1,133 @@
+/* ===================================
+   PAGE: Events
+   Event listing, cards, register button.
+   =================================== */
+
+/* --- Section title --- */
+
+.events-section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Divider line --- */
+
+.events-divider {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    border: none;
+    border-top: 2px solid var(--cnes-light);
+    opacity: 0.4;
+}
+
+/* --- Event card --- */
+
+.event-card {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    text-align: left;
+}
+
+/* --- Event title --- */
+
+.event-title {
+    font-family: var(--font-display);
+    color: var(--cnes-yellow);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+}
+
+/* --- Meta list: date, time, location --- */
+
+.event-meta {
+    list-style: none;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+    .event-meta li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--cnes-white);
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+
+.event-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: var(--cnes-white);
+    stroke: var(--cnes-white);
+    transform: translateZ(0);
+    will-change: auto;
+    vertical-align: middle;
+}
+
+/* --- Description text --- */
+
+.event-description p {
+    color: var(--cnes-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0 0 0.75rem 0;
+}
+
+.event-note {
+    font-style: italic;
+}
+
+.event-seats {
+    font-weight: bold;
+    color: var(--cnes-white) !important;
+}
+
+/* --- Register button --- */
+
+.btn-register {
+    display: inline-block;
+    margin: 1.5rem auto 0;
+    padding: 0.85rem 3rem;
+    background: var(--cnes-yellow);
+    color: var(--cnes-dark);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 3px solid var(--cnes-yellow);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    display: block;
+    text-align: center;
+    max-width: 220px;
+    margin: 1.5rem auto 0;
+}
+
+    .btn-register:hover {
+        background: transparent;
+        color: var(--cnes-yellow);
+    }
+
+/* --- Coming soon line --- */
+
+.events-coming-soon {
+    font-family: var(--font-display);
+    color: var(--cnes-yellow);
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}

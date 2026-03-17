@@ -166,7 +166,7 @@ nav {
         overflow: hidden;
         transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
         box-shadow: none;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: var(--cnes-darkred); /* matches the nav bar */
     }
 
     .dropdown.active .dropdown-menu {
