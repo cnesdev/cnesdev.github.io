@@ -1,9 +1,0 @@
-/* ===================================
-   PAGE: Cloud Chamber
-   Sets the page background image.
-   Video embed styles live in components.css.
-   =================================== */
-
-.bg-wrap-cloud-chamber {
-    --page-bg-image: url("/assets/images/projects/cloud-chamber-bg.png");
-}

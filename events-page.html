@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Events - CNES</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 
 <body>
@@ -23,25 +23,23 @@
                 </button>
                 <ul class="nav-links">
                     <li><a href="/" class="button">Home</a></li>
-                    <li><a href="/about.html" class="button">About</a></li>
+                    <li><a href="/about-page.html" class="button">About</a></li>
                     <li class="dropdown">
-                        <a class="button" href="/projects.html">Projects</a>
+                        <a class="button" href="/projects-page.html">Projects</a>
                         <ul class="dropdown-menu">
-                            <li><a href="/projects/cloud-chamber.html" class="button">Cloud Chamber</a></li>
-                            <li><a href="/projects/reactor-simulator.html" class="button">Reactor Simulator</a></li>
-                            <li><a href="/projects/fusor.html" class="button">Fusor</a></li>
+                            <li><a href="/cloud-chamber-page.html" class="button">Cloud Chamber</a></li>
+                            <li><a href="/reactor-simulator-page.html" class="button">Reactor Simulator</a></li>
+                            <li><a href="/fusor-page.html" class="button">Fusor</a></li>
                         </ul>
                     </li>
-                    <li><a href="/events.html" class="button">Events</a></li>
-                    <li><a href="/contact.html" class="button">Join</a></li>
+                    <li><a href="/events-page.html" class="button">Events</a></li>
+                    <li><a href="/contact-page.html" class="button">Join</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="page-content">
-
-        <!-- Hero with background image -->
         <section class="page-bg">
             <section class="hero">
                 <div class="hero-center">
@@ -53,13 +51,10 @@
             </section>
         </section>
 
-        <!-- Events content -->
         <section id="events-list" class="below">
-
             <h2 class="cnes-title events-section-title">RESERVE A SPOT</h2>
             <div class="events-divider"></div>
 
-            <!-- ── Event card ── -->
             <article class="event-card">
                 <h3 class="event-title">RTG CAD WORKSHOP</h3>
                 <ul class="event-meta">
@@ -83,7 +78,7 @@
                     </li>
                 </ul>
                 <div class="event-description">
-                    <p>An introductory Solidworks workshop hosted by the CNES and IEEE Concordia. Participants will learn what a Radioisotope Thermoelectric Generator (RTG) is and how it is used in space engineering, then complete a hands-on Solidworks CAD session to model a simplified part. No prior knowledge needed, ENCS account required to access computer lab.</p>
+                    <p>An introductory Solidworks workshop hosted by the Concordia Nuclear Engineering Society and IEEE Concordia. Participants will learn what a Radioisotope Thermoelectric Generator (RTG) is and how it is used in space engineering, then complete a hands-on Solidworks CAD session to model a simplified part. No prior knowledge needed, ENCS account required to access computer lab.</p>
                     <p class="event-note">Note: This is an educational CAD workshop only. No radioactive materials are involved.</p>
                     <p class="event-seats">Limited seats available!</p>
                 </div>
@@ -92,17 +87,37 @@
 
             <div class="events-divider"></div>
 
-            <!-- More coming soon -->
             <p class="events-coming-soon">MORE COMING SOON...</p>
-
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 CNES. All rights reserved.</p>
+        <p>© 2026 Concordia Nuclear Engineering Society. All rights reserved.</p>
     </footer>
 
-    <script src="/assets/js/navigation.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        document.querySelectorAll('.dropdown > .button').forEach(btn => {
+            btn.addEventListener('click', e => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    btn.closest('.dropdown').classList.toggle('active');
+                }
+            });
+        });
+        document.addEventListener('click', e => {
+            if (!e.target.closest('nav')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            }
+        });
+    </script>
 </body>
 
 </html>

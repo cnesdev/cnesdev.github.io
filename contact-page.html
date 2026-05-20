@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact - CNES</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <nav>
+                <a href="/" class="nav-logo">
+                    <img src="/assets/images/CNES logo (clear).avif" alt="CNES Logo">
+                </a>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="/" class="button">Home</a></li>
+                    <li><a href="/about-page.html" class="button">About</a></li>
+                    <li class="dropdown">
+                        <a class="button" href="/projects-page.html">Projects</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/cloud-chamber-page.html" class="button">Cloud Chamber</a></li>
+                            <li><a href="/reactor-simulator-page.html" class="button">Reactor Simulator</a></li>
+                            <li><a href="/fusor-page.html" class="button">Fusor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/events-page.html" class="button">Events</a></li>
+                    <li><a href="/contact-page.html" class="button">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="page-bg">
+            <section class="hero">
+                <div class="hero-center">
+                    <h2 class="cnes-title">FIND OUT MORE</h2>
+
+                    <div class="social-buttons">
+                        <a href="https://www.linkedin.com/in/nuclear-engineering-914797359/" target="_blank" aria-label="LinkedIn">
+                            <img src="/assets/images/contact-page/linkedin.avif" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/cnes235/" target="_blank" aria-label="Instagram">
+                            <img src="/assets/images/contact-page/instagram.avif" alt="Instagram">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCd4VNO-Lc5dyaMwmV0COL2g" target="_blank" aria-label="Youtube">
+                            <img src="/assets/images/contact-page/youtube.avif" alt="Youtube">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="below">
+                <h2 class="cnes-title">JOIN THE TEAM</h2>
+                <div class="text-box-lg">
+                    <p>Our day-to-day communications, project coordination, and announcements take place on the CNES Discord server. Click the icon and follow the instructions there to become a member today!</p>
+                    <p> </p>
+                </div>
+
+                <div class="social-buttons">
+                    <a href="https://discord.gg/77cTXTfjrK" target="_blank" aria-label="Discord">
+                        <img src="/assets/images/contact-page/discord.avif" alt="Discord">
+                    </a>
+                </div>
+                <div class="text-box-lg">
+                    <p>The Concordia Nuclear Engineering Society is open to everyone, regardless of prior knowledge. If you are interested in nuclear science, nuclear energy, the nuclear industry, or anything nuclear related, don't hesitate to join us!</p>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Concordia Nuclear Engineering Society. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        document.querySelectorAll('.dropdown > .button').forEach(btn => {
+            btn.addEventListener('click', e => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    btn.closest('.dropdown').classList.toggle('active');
+                }
+            });
+        });
+        document.addEventListener('click', e => {
+            if (!e.target.closest('nav')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            }
+        });
+    </script>
+</body>
+
+</html>
