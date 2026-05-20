@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cloud Chamber - CNES</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 
 <body>
@@ -16,33 +16,31 @@
                 <a href="/" class="nav-logo">
                     <img src="/assets/images/CNES logo (clear).avif" alt="CNES Logo">
                 </a>
-
                 <button class="hamburger" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-
                 <ul class="nav-links">
                     <li><a href="/" class="button">Home</a></li>
-                    <li><a href="/about.html" class="button">About</a></li>
+                    <li><a href="/about-page.html" class="button">About</a></li>
                     <li class="dropdown">
-                        <a class="button" href="/projects.html">Projects</a>
+                        <a class="button" href="/projects-page.html">Projects</a>
                         <ul class="dropdown-menu">
-                            <li><a href="/projects/cloud-chamber.html" class="button">Cloud Chamber</a></li>
-                            <li><a href="/projects/reactor-simulator.html" class="button">Reactor Simulator</a></li>
-                            <li><a href="/projects/fusor.html" class="button">Fusor</a></li>
+                            <li><a href="/cloud-chamber-page.html" class="button">Cloud Chamber</a></li>
+                            <li><a href="/reactor-simulator-page.html" class="button">Reactor Simulator</a></li>
+                            <li><a href="/fusor-page.html" class="button">Fusor</a></li>
                         </ul>
                     </li>
-                    <li><a href="/events.html" class="button">Events</a></li>
-                    <li><a href="/contact.html" class="button">Join</a></li>
+                    <li><a href="/events-page.html" class="button">Events</a></li>
+                    <li><a href="/contact-page.html" class="button">Join</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="page-content">
-        <section class="page-bg bg-wrap-cloud-chamber">
+        <section class="page-bg" style="--page-bg-image: url('/assets/images/projects-page/cloud-chamber-bg.png')">
             <section class="hero">
                 <div class="hero-center">
                     <h2 class="cnes-title">CLOUD CHAMBER</h2>
@@ -73,10 +71,32 @@
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 CNES. All rights reserved.</p>
+        <p>© 2026 Concordia Nuclear Engineering Society. All rights reserved.</p>
     </footer>
 
-    <script src="/assets/js/navigation.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        document.querySelectorAll('.dropdown > .button').forEach(btn => {
+            btn.addEventListener('click', e => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    btn.closest('.dropdown').classList.toggle('active');
+                }
+            });
+        });
+        document.addEventListener('click', e => {
+            if (!e.target.closest('nav')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            }
+        });
+    </script>
 </body>
 
 </html>

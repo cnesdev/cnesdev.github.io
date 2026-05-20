@@ -1,8 +1,0 @@
-/* ===================================
-   PAGE: Fusor
-   Sets the page background image.
-   =================================== */
-
-.bg-wrap-fusor {
-    --page-bg-image: url("/assets/images/projects/fusor-bg.png");
-}

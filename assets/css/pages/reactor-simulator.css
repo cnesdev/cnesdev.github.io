@@ -1,8 +1,0 @@
-/* ===================================
-   PAGE: Reactor Simulator
-   Sets the page background image.
-   =================================== */
-
-.bg-wrap-reactor-simulator {
-    --page-bg-image: url("/assets/images/projects/reactor-simulator-bg.png");
-}
