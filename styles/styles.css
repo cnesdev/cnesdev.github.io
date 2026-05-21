@@ -133,18 +133,6 @@ p {
     flex: 1;
 }
 
-/* --- Containers --- */
-
-.container {
-    max-width: var(--max-width);
-    margin-inline: auto;
-    padding-inline: var(--space-3);
-}
-
-.stack > * + * {
-    margin-top: var(--space-3);
-}
-
 /* --- Hero section --- */
 
 .hero {
@@ -207,7 +195,7 @@ footer {
     z-index: 2;
 }
 
-/* --- Page background — fixed image with dark overlay ---
+/* --- Page background — fixed image, no overlay ---
    Usage: <section class="page-bg [bg-wrap-*]">
    Each page sets --page-bg-image on its modifier class.
    =================================== */
@@ -221,9 +209,7 @@ footer {
     content: "";
     position: fixed;
     inset: 0;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        var(--page-bg-image, url("/assets/images/reactor-bg.jpg")) center / cover no-repeat;
+    background: var(--page-bg-image, url("/assets/images/backgrounds/bg-other.jpg")) center / cover no-repeat;
     z-index: -1;
 }
 
@@ -232,28 +218,9 @@ footer {
     z-index: 1;
 }
 
-/* --- Nav buttons row (index) --- */
-
-.nav-buttons {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-    gap: 10rem;
-}
-
-.nav-buttons a {
-    margin: 0;
-}
-
 /* --- Responsive --- */
 
 @media (max-width: 768px) {
-    .nav-buttons {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-    }
-
     .logo {
         width: 400px;
     }
@@ -450,11 +417,8 @@ nav {
         background-color: rgba(255, 255, 255, 0.1);
     }
 
-    .btn-square:active,
-    .btn-rounded:active {
-        transform: scale(0.98);
-        color: var(--cnes-yellow);
-        border-color: var(--cnes-yellow);
+    .btn-filled:active {
+        opacity: 0.85;
     }
 }
 
@@ -480,35 +444,41 @@ a.button {
     text-decoration: none;
 }
 
-/* --- Square border button --- */
+/* --- Filled buttons --- */
 
-.btn-square {
-    border: 4px solid var(--cnes-white);
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
+.btn-filled {
     display: inline-block;
-    color: var(--cnes-white);
-    font-family: var(--font-serif);
-}
-
-/* --- Rounded border button --- */
-
-.btn-rounded {
-    border: 4px solid var(--cnes-white);
-    border-radius: 20px;
     padding: 0.75rem 2.5rem;
+    border: 3px solid transparent;
+    border-radius: 30px;
+    color: var(--cnes-dark);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
     text-decoration: none;
-    display: inline-block;
-    color: var(--cnes-white);
-    font-family: var(--font-serif);
-    min-width: 200px;
+    text-transform: uppercase;
+    transition: background 0.2s, border-color 0.2s;
     text-align: center;
 }
 
-.btn-square:hover,
-.btn-rounded:hover {
-    color: var(--cnes-yellow);
+.btn-filled--white {
+    background: var(--cnes-white);
+    border-color: var(--cnes-white);
+}
+
+.btn-filled--white:hover {
+    background: var(--cnes-yellow);
     border-color: var(--cnes-yellow);
+}
+
+.btn-filled--yellow {
+    background: var(--cnes-yellow);
+    border-color: var(--cnes-yellow);
+}
+
+.btn-filled--yellow:hover {
+    background: var(--cnes-white);
+    border-color: var(--cnes-white);
 }
 
 /* --- Social icon buttons --- */
@@ -563,28 +533,6 @@ a.button {
 /* ============================================================
    7. PAGES — Per-page overrides
    ============================================================ */
-
-/* --- Index --- */
-
-.btn-join {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.75rem 2.5rem;
-    border: 3px solid var(--cnes-white);
-    border-radius: 30px;
-    color: var(--cnes-white);
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.2s, border-color 0.2s;
-}
-
-.btn-join:hover {
-    color: var(--cnes-yellow);
-    border-color: var(--cnes-yellow);
-}
 
 .node-map {
     display: block;
@@ -664,7 +612,7 @@ a.button {
 /* --- Projects --- */
 
 .bg-wrap-projects-page {
-    --page-bg-image: url("/assets/images/projects-page/candu-bg.png");
+    --page-bg-image: url("/assets/images/backgrounds/bg-projects.jpg");
 }
 
 .projects {
