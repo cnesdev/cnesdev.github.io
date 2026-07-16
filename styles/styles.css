@@ -319,7 +319,8 @@ nav {
     transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
     opacity: 1;
     visibility: visible;
 }
@@ -504,6 +505,58 @@ a.button {
 
 .social-buttons a:hover {
     transform: scale(1.05);
+}
+
+/* --- Event banner (homepage promo) --- */
+
+.event-banner {
+    padding: 0 1rem;
+}
+
+.event-banner-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: center;
+}
+
+.event-banner-eyebrow {
+    font-family: var(--font-serif);
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--cnes-yellow);
+    margin: 0 0 var(--space-2) 0;
+}
+
+.event-banner-inner h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: var(--space-2);
+}
+
+.event-banner-details {
+    color: var(--cnes-white);
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .event-banner-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        gap: var(--space-4);
+    }
+
+    .event-banner-inner h2 {
+        margin-bottom: var(--space-1);
+    }
+
+    .event-banner-text {
+        flex: 1;
+    }
 }
 
 /* --- Responsive video embed (16:9) --- */
@@ -812,4 +865,75 @@ a.button {
     max-width: 600px;
     margin: 0 auto;
     padding-bottom: 2rem;
+}
+
+/* --- Event actions (add to calendar / directions) --- */
+
+.event-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--cnes-yellow);
+    border-radius: 30px;
+    color: var(--cnes-yellow);
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+    background: var(--cnes-yellow);
+    color: var(--cnes-dark);
+}
+
+/* --- Past events --- */
+
+.past-events-title {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    margin: 3rem auto 1.5rem;
+    max-width: 600px;
+    text-align: left;
+}
+
+.past-events-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+.past-event {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.past-event:last-child {
+    border-bottom: none;
+}
+
+.past-event-title {
+    font-family: var(--font-serif);
+    font-weight: bold;
+    color: var(--cnes-white);
+}
+
+.past-event-date {
+    color: var(--cnes-light);
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
