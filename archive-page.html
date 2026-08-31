@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Archive - CNES</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/styles/styles.css" />
+
+    <meta name="description" content="CNES comic archive">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Concordia Nuclear Engineering Society">
+    <meta property="og:title" content="Archive - CNES">
+    <meta property="og:description" content="CNES comic archive">
+    <meta property="og:image" content="https://cnes.ca/assets/images/CNES_logo_dark.png">
+    <meta property="og:url" content="https://cnes.ca/archive-page.html">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <nav>
+                <a href="/" class="nav-logo">
+                    <img src="/assets/images/CNES logo (clear).avif" alt="CNES Logo">
+                </a>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="/" class="button">Home</a></li>
+                    <li><a href="/about-page.html" class="button">About</a></li>
+                    <li class="dropdown">
+                        <a class="button" href="/projects-page.html">Projects</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/cloud-chamber-page.html" class="button">Cloud Chamber</a></li>
+                            <li><a href="/reactor-simulator-page.html" class="button">Reactor Simulator</a></li>
+                            <li><a href="/fusor-page.html" class="button">Fusor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/events-page.html" class="button">Events</a></li>
+                    <li><a href="/archive-page.html" class="button">Archive</a></li>
+                    <li><a href="/store-page.html" class="button">Store</a></li>
+                    <li><a href="/contact-page.html" class="button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="page-bg">
+            <section class="hero">
+                <div class="hero-center">
+                    <h2 class="cnes-title">ARCHIVED POSTS</h2>
+                </div>
+            </section>
+
+            <section class="below">
+                <div class="comics-grid" id="comics-grid">
+
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Concordia Nuclear Engineering Society. All rights reserved.</p>
+    </footer>
+
+
+
+    
+    <script>
+        // To add a new comic: save the image as
+        // /assets/images/archive-page/cnes-comic-<n>.avif
+        // then add one entry below with its date and Instagram link.
+        const comics = [
+            { number: 1, date: "April 16, 2026", link: "https://www.instagram.com/p/DXNDD11Eees" },
+            { number: 2, date: "May 2, 2026", link: "https://www.instagram.com/p/DX2GEdSkcZ8" },
+            { number: 3, date: "May 2, 2026", link: "https://www.instagram.com/p/DX2Gu2FkePV" },
+            { number: 4, date: "June 2, 2026", link: "https://www.instagram.com/p/DZFmmpIEenI/" },
+            { number: 5, date: "July 22, 2026", link: "https://www.instagram.com/p/DbGtEXcEVkD/" },
+        ];
+
+        const grid = document.getElementById('comics-grid');
+        comics.forEach(comic => {
+            const item = document.createElement('a');
+            item.className = 'comic-item';
+            item.href = comic.link;
+            item.target = '_blank';
+            item.rel = 'noopener noreferrer';
+
+            const img = document.createElement('img');
+            img.src = `/assets/images/archive-page/cnes-comic-${comic.number}.png`;
+            img.alt = `CNES comic ${comic.number}, posted ${comic.date}`;
+            img.loading = 'lazy';
+
+            const caption = document.createElement('span');
+            caption.className = 'comic-date';
+            caption.textContent = comic.date;
+
+            item.appendChild(img);
+            item.appendChild(caption);
+            grid.appendChild(item);
+        });
+    </script>
+    
+</body>
+
+</html>

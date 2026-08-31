@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Store - CNES</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/styles/styles.css" />
+
+    <meta name="description" content="CNES merchandise store">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Concordia Nuclear Engineering Society">
+    <meta property="og:title" content="Store - CNES">
+    <meta property="og:description" content="CNES merchandise store">
+    <meta property="og:image" content="https://cnes.ca/assets/images/CNES_logo_dark.png">
+    <meta property="og:url" content="https://cnes.ca/store-page.html">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <nav>
+                <a href="/" class="nav-logo">
+                    <img src="/assets/images/CNES logo (clear).avif" alt="CNES Logo">
+                </a>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="/" class="button">Home</a></li>
+                    <li><a href="/about-page.html" class="button">About</a></li>
+                    <li class="dropdown">
+                        <a class="button" href="/projects-page.html">Projects</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/cloud-chamber-page.html" class="button">Cloud Chamber</a></li>
+                            <li><a href="/reactor-simulator-page.html" class="button">Reactor Simulator</a></li>
+                            <li><a href="/fusor-page.html" class="button">Fusor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/events-page.html" class="button">Events</a></li>
+                    <li><a href="/archive-page.html" class="button">Archive</a></li>
+                    <li><a href="/store-page.html" class="button">Store</a></li>
+                    <li><a href="/contact-page.html" class="button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="page-bg">
+            <section class="hero">
+                <div class="hero-center">
+                    <h1 class="cnes-title">STORE</h1>
+                </div>
+            </section>
+
+            <section class="below">
+                <div class="store-list">
+                    <article class="store-item store-item-reverse">
+                        <div class="store-item-media">
+                            <img src="/assets/images/store-page/cnes-tshirt-cloud-chamber.avif" alt="CNES Cloud Chamber T-Shirt" loading="lazy">
+                        </div>
+                        <div class="store-item-content">
+                            <h1 class="store-item-title">CNES Cloud Chamber T-Shirt</h1>
+                            <p class="store-item-description">Unisex short sleeved cotton T-shirt celebrating our cloud chamber project. Available in multiple colors and sizes.</p>
+                            <a class="btn-outline" href="https://www.tshirttime.com/design-editor/?product_base=797&product_cms=52086&share=KlLyboQFCG" target="_blank" rel="noopener noreferrer">info</a>
+                        </div>
+                    </article>
+
+                    <article class="store-item">
+                        <div class="store-item-media">
+                            <img src="/assets/images/store-page/cnes-tshirt-logo.avif" alt="CNES Logo T-Shirt" loading="lazy">
+                        </div>
+                        <div class="store-item-content">
+                            <h2 class="store-item-title">CNES Logo T-Shirt</h2>
+                            <p class="store-item-description">Unisex short sleeved cotton T-shirt featuring the CNES logo. Available in multiple colors and sizes.</p>
+                            <a class="btn-outline" href="https://www.tshirttime.com/design-editor/?product_base=797&product_cms=52086&share=Gf6j4pyBkM" target="_blank" rel="noopener noreferrer">info</a>
+                        </div>
+                    </article>
+
+
+
+                    <!--
+    To add a new product:
+    1. Save the image as /assets/images/store-page/<product-name>.avif
+    2. Copy one of the <article class="store-item"> blocks above
+       (add class "store-item-reverse" to alternate the layout)
+    3. Update the image src/alt, title, description, and link
+
+    <article class="store-item">
+        <div class="store-item-media">
+            <img src="/assets/images/store-page/PRODUCT_IMAGE.avif" alt="PRODUCT_NAME" loading="lazy">
+        </div>
+        <div class="store-item-content">
+            <h3 class="store-item-title">PRODUCT_NAME</h3>
+            <p class="store-item-description">PRODUCT_DESCRIPTION</p>
+            <a class="btn-register" href="PRODUCT_LINK" target="_blank" rel="noopener noreferrer">Order</a>
+        </div>
+    </article>
+    -->
+                </div>
+
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Concordia Nuclear Engineering Society. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        document.querySelectorAll('.dropdown > .button').forEach(btn => {
+            btn.addEventListener('click', e => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    btn.closest('.dropdown').classList.toggle('active');
+                }
+            });
+        });
+        document.addEventListener('click', e => {
+            if (!e.target.closest('nav')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            }
+        });
+    </script>
+</body>
+
+</html>

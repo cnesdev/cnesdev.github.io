@@ -132,6 +132,8 @@ p {
 
 .page-content {
     flex: 1;
+  
+
 }
 
 /* --- Hero section --- */
@@ -603,6 +605,15 @@ a.button {
     display: block;
 }
 
+.values-box {
+    text-align: left;
+}
+
+.values-list {
+    display: inline-block;
+    text-align: left;
+}
+
 @media (min-width: 768px) {
     .hero.team {
         display: grid;
@@ -898,13 +909,6 @@ a.button {
 
 /* --- Past events --- */
 
-.past-events-title {
-    font-size: clamp(1.4rem, 3vw, 1.8rem);
-    margin: 3rem auto 1.5rem;
-    max-width: 600px;
-    text-align: left;
-}
-
 .past-events-list {
     list-style: none;
     max-width: 600px;
@@ -936,4 +940,106 @@ a.button {
     color: var(--cnes-light);
     font-size: 0.9rem;
     white-space: nowrap;
+}
+
+/* --- Archive --- */
+
+.comics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.comic-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+    .comic-item img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-md);
+        transition: transform 0.2s ease;
+    }
+
+    .comic-item:hover img {
+        transform: scale(1.03);
+    }
+
+.comic-date {
+    margin-top: 0.5rem;
+    color: var(--cnes-light);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* --- Store --- */
+
+.store-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: var(--max-width);
+    margin: 0 auto 2rem;
+}
+
+.store-item {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.store-item-reverse {
+    flex-direction: row-reverse;
+}
+
+.store-item-media {
+    flex: 1;
+    max-width: 350px;
+}
+
+    .store-item-media img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-md);
+    }
+
+.store-item-content {
+    flex: 1;
+    text-align: left;
+}
+
+.store-item-title {
+    font-family: var(--font-display);
+    color: var(--cnes-yellow);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+}
+
+.store-item-description {
+    color: var(--cnes-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .store-item,
+    .store-item-reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .store-item-media {
+        max-width: 280px;
+    }
+
+    .store-item-content {
+        text-align: center;
+    }
 }
