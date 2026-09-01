@@ -42,7 +42,9 @@
                         </ul>
                     </li>
                     <li><a href="/events-page.html" class="button">Events</a></li>
-                    <li><a href="/contact-page.html" class="button">Contact/Join</a></li>
+                    <li><a href="/archive-page.html" class="button">Archive</a></li>
+                    <li><a href="/store-page.html" class="button">Store</a></li>
+                    <li><a href="/contact-page.html" class="button">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -64,9 +66,8 @@
                 <p>The Concordia Nuclear Engineering Society supports student learning through small-scale, safe projects related to the nuclear industry and nuclear science. We host lectures, academic events, and nuclear facility tours for our members. Learn more about our mission and team, projects, and how to join us below.</p>
             </div>
 
-            <svg class="node-map" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+            <svg class="node-map" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg"
                  role="navigation" aria-label="Site navigation">
-
                 <defs>
                     <style>
                         .node-circle {
@@ -80,9 +81,9 @@
 
                         .node-label {
                             fill: #2a2829;
-                            font-family: "BBHHegarty", system-ui, sans-serif;
+                            font-family: "RubicMonoOne", Impact, sans-serif;
                             font-size: 18px;
-                            font-weight: bold;
+                            font-weight: normal;
                             letter-spacing: 1.5px;
                             text-anchor: middle;
                             dominant-baseline: middle;
@@ -94,38 +95,50 @@
                             cursor: pointer;
                         }
 
-                        .svg-line {
+                        .orbit-ring {
+                            fill: none;
                             stroke: #dda900;
                             stroke-width: 8;
+                        }
+
+                        .center-core {
+                            fill: #88243B;
                         }
                     </style>
                 </defs>
 
-                <line class="svg-line" x1="30" y1="210" x2="175" y2="210" />
-                <line class="svg-line" x1="175" y1="210" x2="525" y2="210" />
-                <line class="svg-line" x1="525" y1="210" x2="670" y2="210" />
-                <line class="svg-line" x1="175" y1="210" x2="385" y2="100" />
-                <line class="svg-line" x1="175" y1="210" x2="385" y2="320" />
-                <circle cx="670" cy="210" r="16" fill="#dda900" />
+                <!-- Orbit ring -->
+                <circle class="orbit-ring" cx="350" cy="350" r="220" />
 
+                <!-- Center core with logo -->
+                <circle class="center-core" cx="350" cy="350" r="130" />
+                <image href="/assets/images/CNES logo (white) .avif"
+                       x="250" y="250" width="200" height="200" />
+
+                <!-- Nav nodes, evenly spaced 60 degrees apart around the ring -->
                 <a class="node-link" href="/about-page.html">
-                    <circle class="node-circle" cx="175" cy="210" r="65" />
-                    <text class="node-label" x="175" y="210">ABOUT US</text>
+                    <circle class="node-circle" cx="350" cy="130" r="65" />
+                    <text class="node-label" x="350" y="130">ABOUT</text>
                 </a>
-
-                <a class="node-link" href="/contact-page.html">
-                    <circle class="node-circle" cx="525" cy="210" r="65" />
-                    <text class="node-label" x="525" y="210">CONTACT</text>
-                </a>
-
                 <a class="node-link" href="/projects-page.html">
-                    <circle class="node-circle" cx="385" cy="100" r="65" />
-                    <text class="node-label" x="385" y="100">PROJECTS</text>
+                    <circle class="node-circle" cx="540.5" cy="240" r="65" />
+                    <text class="node-label" x="540.5" y="240">PROJECTS</text>
                 </a>
-
                 <a class="node-link" href="/events-page.html">
-                    <circle class="node-circle" cx="385" cy="320" r="65" />
-                    <text class="node-label" x="385" y="320">EVENTS</text>
+                    <circle class="node-circle" cx="540.5" cy="460" r="65" />
+                    <text class="node-label" x="540.5" y="460">EVENTS</text>
+                </a>
+                <a class="node-link" href="/archive-page.html">
+                    <circle class="node-circle" cx="350" cy="570" r="65" />
+                    <text class="node-label" x="350" y="570">ARCHIVE</text>
+                </a>
+                <a class="node-link" href="/store-page.html">
+                    <circle class="node-circle" cx="159.5" cy="460" r="65" />
+                    <text class="node-label" x="159.5" y="460">STORE</text>
+                </a>
+                <a class="node-link" href="/contact-page.html">
+                    <circle class="node-circle" cx="159.5" cy="240" r="65" />
+                    <text class="node-label" x="159.5" y="240">CONTACT</text>
                 </a>
             </svg>
         </section>
