@@ -675,6 +675,26 @@ a.button {
     }
 }
 
+.email-link,
+.email-link:visited,
+.email-link:hover,
+.email-link:active {
+    color: var(--cnes-white);
+    text-decoration: none;
+}
+
+.email-link:hover {
+     color: var(--cnes-yellow);
+ }
+
+.contact-email-block {
+    margin-top: 2rem;
+}
+
+.contact-email-block .email-link {
+    margin-left: 0.4rem;
+ }
+
 /* --- Projects --- */
 
 .bg-wrap-projects-page {

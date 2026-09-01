@@ -74,7 +74,6 @@
                 <h2 class="cnes-title">JOIN THE TEAM</h2>
                 <div class="text-box-lg">
                     <p>Our day-to-day communications, project coordination, and announcements take place on the CNES Discord server. Click the icon and follow the instructions there to become a member today!</p>
-                    <p> </p>
                 </div>
 
                 <div class="social-buttons">
@@ -83,7 +82,22 @@
                     </a>
                 </div>
                 <div class="text-box-lg">
-                    <p>The Concordia Nuclear Engineering Society is open to everyone, regardless of prior knowledge. If you are interested in nuclear science, nuclear energy, the nuclear industry, or anything nuclear related, don't hesitate to join us!</p>
+                    <p>The Concordia Nuclear Engineering Society is open to everyone, regardless of prior knowledge. If you are interested in nuclear science, nuclear energy, the nuclear industry, or anything nuclear-related, don't hesitate to join us!</p>
+                </div>
+
+                <div class="text-box-lg contact-email-block">
+                    <p></p>
+                    <p>
+                        Official communications:
+                        <a id="contact-email" class="email-link" href="#"></a>
+                    </p>
+                    <script>
+                        const user = "external.cnes";
+                        const domain = "ecaconcordia.ca";
+                        const link = document.getElementById('contact-email');
+                        link.href = `mailto:${user}@${domain}`;
+                        link.textContent = `${user}@${domain}`;
+                    </script>
                 </div>
             </section>
         </section>
