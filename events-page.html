@@ -66,8 +66,8 @@
 
         <section id="events-list" class="below">
    
-            <article class="event-card">
-                <h3 class="event-title">Upcoming: ECA FROSH</h3>
+            <!--<article class="event-card">
+                <h3 class="event-title">{{Event.Title}}</h3>
                 <ul class="event-meta">
                     <li>
                         <svg class="event-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -76,28 +76,32 @@
                             <line x1="8" y1="2" x2="8" y2="6" />
                             <line x1="3" y1="10" x2="21" y2="10" />
                         </svg>
-                        <span>Wednesday, September 2 &ndash; Thursday, September 3, 2026</span>
+                        <span>{{Event.Date}}</span>
                     </li>
                     <li>
                         <svg class="event-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                         </svg>
-                        <span>Loyola Campus, Concordia University</span>
+                        <span>{{Event.Location}}</span>
                     </li>
                 </ul>
                 <div class="event-description">
-                    <p>Find us at ECA Frosh! Stop by our table to meet the team, learn about upcoming projects, and see what CNES is all about.</p>
+                    <p>{{Event.Details}}</p>
         
                 </div>
                 <div class="event-actions">
-                    <a class="btn-outline" download="eca-frosh.ics" href="data:text/calendar;charset=utf8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0ABEGIN%3AVEVENT%0D%0ASUMMARY%3AECA%20Frosh%20-%20CNES%0D%0ADTSTART%3BVALUE%3DDATE%3A20260902%0D%0ADTEND%3BVALUE%3DDATE%3A20260904%0D%0ALOCATION%3ALoyola%20Campus%5C%2C%20Concordia%20University%0D%0ADESCRIPTION%3AFind%20us%20at%20ECA%20Frosh%21%20Stop%20by%20our%20table%20to%20meet%20the%20team%20and%20learn%20about%20CNES.%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A">Add to Calendar</a>
-                    <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&query=Loyola+Campus+Concordia+University+7141+Sherbrooke+St+W+Montreal+QC+H4B+1R6" target="_blank" rel="noopener">Get Directions</a>
-                </div>
-            </article>
+                    <a class="btn-outline" download="" href="">Add to Calendar</a>
+                    <a class="btn-outline" href="" target="_blank" rel="noopener">Get Directions</a>
+                </div> 
+            </article>-->
             <div class="events-divider"></div>
             <h3 class="past-event-title">PAST EVENTS</h3>
             <ul class="past-events-list">
+                <li class="past-event">
+                    <span class="past-event-title">ECA Frosh</span>
+                    <span class="past-event-date">September 2, 2026</span>
+                </li>
                 <li class="past-event">
                     <span class="past-event-title">Football Watch Party</span>
                     <span class="past-event-date">July 19, 2026</span>
